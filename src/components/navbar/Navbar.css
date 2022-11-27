@@ -1,0 +1,156 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8rem;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+.logo-text span {
+    font-weight: 600;
+    color: chartreuse;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--color-white);
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.nav-links a:hover {
+    color: chartreuse;
+}
+
+a.btn {
+    
+    border-radius: 5px;
+    margin-left: 1rem;
+    font-weight: 500;
+    padding: 5px 8px;
+}
+
+a.btn-dark {
+    border: 2px solid var(--color-white);
+    background: transparent;
+}
+
+a.btn-light {
+    border: 2px solid transparent;
+    background: chartreuse;
+    color: var(--color-white);
+}
+
+.navbar .menu-icons {
+    background: transparent;
+    border: none;
+    display: none;
+}
+  
+/* Media Queries */
+@media screen and (max-width: 769px) {
+  /* hide nav button on navbar */
+  .nav-btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+    /* show nav button on navbar menu */
+    .nav-btn {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      border: 2px solid #7fff00;
+      z-index: 111;
+    }
+  
+    .navbar .menu-icons {
+      display: block;
+    }
+  
+    .navbar #nav-links-mobile,
+    .navbar #nav-links-mobile-hide {
+      display: block;
+      position: absolute;
+      list-style: none;
+      background: #0a1930;
+      left: 0;
+      top: 80px;
+      width: 100%;
+      transition: all 0.3s;
+      border-top: 1px solid #7fff00;
+      padding-bottom: 5px;
+    }
+  
+    .navbar #nav-links-mobile {
+      animation: slide-in 0.5s ease-in-out;
+    }
+  
+    .navbar #nav-links-mobile-hide {
+      left: -100%;
+      animation: slide-out 0.5s ease-in-out;
+    }
+    @keyframes slide-out {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  
+    @keyframes slide-in {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  
+    .navbar #nav-links-mobile li,
+    .navbar #nav-links-mobile-hide li {
+      text-align: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #7fff00;
+      margin: 0 30px;
+    }
+  
+    .navbar #nav-links-mobile li:last-child {
+      border-bottom: none;
+    }
+  
+    .navbar #nav-links-mobile li a {
+      color: #7fff00;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  
+    .navbar #nav-links-mobile a:hover {
+      color: chartreuse;
+    }
+  }
